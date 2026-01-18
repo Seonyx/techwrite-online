@@ -1,0 +1,49 @@
+@page
+@model TechWrite.Web.Pages.PortfolioModel
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Portfolio</h1>
+
+        <p class="lead text-center mb-5">Selected examples of technical writing projects and documentation work.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h5 card-title">Software User Guide</h2>
+                        <p class="card-text text-muted">Comprehensive user documentation for enterprise software application.</p>
+                        <span class="badge bg-secondary">User Documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h5 card-title">REST API Reference</h2>
+                        <p class="card-text text-muted">Developer-focused API documentation with code examples.</p>
+                        <span class="badge bg-secondary">API Documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h5 card-title">Operations Manual</h2>
+                        <p class="card-text text-muted">Standard operating procedures for IT operations team.</p>
+                        <span class="badge bg-secondary">Process Documentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-5" role="alert">
+            <strong>Note:</strong> Detailed case studies and writing samples are available upon request. Please <a asp-page="/Contact" class="alert-link">contact me</a> to discuss your specific documentation needs.
+        </div>
+    </div>
+</section>

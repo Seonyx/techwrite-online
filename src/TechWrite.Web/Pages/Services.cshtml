@@ -1,0 +1,78 @@
+@page
+@model TechWrite.Web.Pages.ServicesModel
+@{
+    ViewData["Title"] = "Services";
+}
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Technical Writing Services</h1>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">User Documentation</h2>
+                        <p class="card-text">Comprehensive user guides, quick start guides, and reference documentation that help your users get the most from your product.</p>
+                        <ul class="list-unstyled">
+                            <li>User manuals</li>
+                            <li>Quick start guides</li>
+                            <li>Online help systems</li>
+                            <li>Release notes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">API Documentation</h2>
+                        <p class="card-text">Clear, developer-friendly API documentation that accelerates integration and reduces support burden.</p>
+                        <ul class="list-unstyled">
+                            <li>API reference guides</li>
+                            <li>Integration tutorials</li>
+                            <li>Code samples</li>
+                            <li>SDK documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Process Documentation</h2>
+                        <p class="card-text">Standard operating procedures and workflow documentation for operational consistency and compliance.</p>
+                        <ul class="list-unstyled">
+                            <li>SOPs and work instructions</li>
+                            <li>Workflow documentation</li>
+                            <li>Compliance documentation</li>
+                            <li>Training materials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 card-title">Content Strategy</h2>
+                        <p class="card-text">Information architecture and content planning to organize and optimize your technical content.</p>
+                        <ul class="list-unstyled">
+                            <li>Documentation audits</li>
+                            <li>Information architecture</li>
+                            <li>Style guide development</li>
+                            <li>Content migration planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <h3 class="h5 mb-3">Ready to discuss your project?</h3>
+            <a asp-page="/Contact" class="btn btn-primary btn-lg">Contact Me</a>
+        </div>
+    </div>
+</section>

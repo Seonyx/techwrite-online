@@ -134,7 +134,7 @@ public class ContactModel : PageModel
             else
             {
                 ShowErrorMessage = true;
-                ErrorMessage = "There was a problem sending your message. Please try again or email directly.";
+                ErrorMessage = "There was a problem sending your message. Please try again later.";
             }
         }
         catch (Exception ex)

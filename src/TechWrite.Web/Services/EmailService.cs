@@ -1,6 +1,8 @@
 using System.Net;
-using System.Net.Mail;
+using MailKit.Net.Smtp;
+using MailKit.Security;
 using Microsoft.Extensions.Options;
+using MimeKit;
 
 namespace TechWrite.Web.Services;
 
@@ -19,23 +21,34 @@ public class EmailService : IEmailService
     {
         try
         {
-            using var client = new SmtpClient(_settings.Host, _settings.Port)
-            {
-                Credentials = new NetworkCredential(_settings.Username, _settings.Password),
-                EnableSsl = _settings.EnableSsl
-            };
+            var mimeMessage = new MimeMessage();
+            mimeMessage.From.Add(new MailboxAddress(_settings.FromName, _settings.FromAddress));
+            mimeMessage.To.Add(MailboxAddress.Parse(_settings.ToAddress));
+            mimeMessage.ReplyTo.Add(new MailboxAddress(name, email));
+            mimeMessage.Subject = $"[TechWrite Contact] {subject}";
 
-            var mailMessage = new MailMessage
+            var bodyBuilder = new BodyBuilder
             {
-                From = new MailAddress(_settings.FromAddress, _settings.FromName),
-                Subject = $"[TechWrite Contact] {subject}",
-                IsBodyHtml = true,
-                Body = BuildEmailBody(name, email, subject, message)
+                HtmlBody = BuildEmailBody(name, email, subject, message)
             };
-            mailMessage.To.Add(_settings.ToAddress);
-            mailMessage.ReplyToList.Add(new MailAddress(email, name));
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
 
-            await client.SendMailAsync(mailMessage);
+            using var client = new SmtpClient();
+
+            // Connect with STARTTLS on port 587
+            await client.ConnectAsync(
+                _settings.Host,
+                _settings.Port,
+                _settings.EnableSsl ? SecureSocketOptions.StartTls : SecureSocketOptions.None);
+
+            // Authenticate
+            if (!string.IsNullOrEmpty(_settings.Username))
+            {
+                await client.AuthenticateAsync(_settings.Username, _settings.Password);
+            }
+
+            await client.SendAsync(mimeMessage);
+            await client.DisconnectAsync(true);
 
             _logger.LogInformation("Contact email sent successfully from {Email}", email);
             return true;

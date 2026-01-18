@@ -3,7 +3,11 @@
     "allow": [
       "Bash(dotnet:*)",
       "Bash(docker --version:*)",
-      "Bash(docker build:*)"
+      "Bash(docker build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:techwrite-online.onrender.com)"
     ]
   }
 }

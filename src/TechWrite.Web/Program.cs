@@ -8,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
+// Convert PostgreSQL URI format (from Render) to ADO.NET format if needed
+if (connectionString.StartsWith("postgresql://") || connectionString.StartsWith("postgres://"))
+{
+    connectionString = ConvertPostgresUri(connectionString);
+}
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
@@ -58,3 +64,17 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
+
+// Helper function to convert PostgreSQL URI to ADO.NET connection string
+static string ConvertPostgresUri(string uri)
+{
+    var uriObj = new Uri(uri);
+    var userInfo = uriObj.UserInfo.Split(':');
+    var username = userInfo[0];
+    var password = userInfo.Length > 1 ? userInfo[1] : "";
+    var host = uriObj.Host;
+    var port = uriObj.Port > 0 ? uriObj.Port : 5432;
+    var database = uriObj.AbsolutePath.TrimStart('/');
+
+    return $"Host={host};Port={port};Database={database};Username={username};Password={password};SSL Mode=Require;Trust Server Certificate=true";
+}

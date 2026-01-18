@@ -4,43 +4,66 @@
     ViewData["Title"] = "Home";
 }
 
-<section class="bg-primary text-white py-5">
+<!-- Hero Section -->
+<section class="bg-dark text-white py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h1 class="display-4 fw-bold">Professional Technical Writing Services</h1>
-                <p class="lead mb-4">Clear, concise, and effective technical documentation that helps your users succeed.</p>
-                <a asp-page="/Contact" class="btn btn-light btn-lg">Get in Touch</a>
+        <div class="row align-items-center py-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-3 fw-bold mb-3">Clarity. Precision. Impact.</h1>
+                <p class="lead mb-4">We specialise in technical writing that transforms complexity into clarity. Whether you need investment literature, technical documentation, or financial education content, we deliver precise, user-centric writing tailored to your audience.</p>
+                <a asp-page="/Contact" class="btn btn-primary btn-lg me-2">Get in Touch</a>
+                <a asp-page="/Services" class="btn btn-outline-light btn-lg">Our Services</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Why Choose Us Section -->
 <section class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5">What I Do</h2>
+        <h2 class="text-center mb-5">Why Choose TechWrite.Online?</h2>
         <div class="row g-4">
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <h3 class="h5">Documentation</h3>
-                        <p class="text-muted">User guides, API documentation, and technical manuals that make complex systems accessible.</p>
+                    <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <span class="display-6">🇬🇧</span>
+                        </div>
+                        <h3 class="h5 fw-bold">Native English Expertise</h3>
+                        <p class="text-muted mb-0">Clear, professional writing by a London-born technical writer.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <h3 class="h5">Process Writing</h3>
-                        <p class="text-muted">Standard operating procedures, workflows, and process documentation for consistency and compliance.</p>
+                    <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <span class="display-6">📊</span>
+                        </div>
+                        <h3 class="h5 fw-bold">Proven Track Record</h3>
+                        <p class="text-muted mb-0">12+ years in financial institutions, including National Savings and Investments.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <h3 class="h5">Content Strategy</h3>
-                        <p class="text-muted">Information architecture and content planning to organize your technical content effectively.</p>
+                    <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <span class="display-6">🤖</span>
+                        </div>
+                        <h3 class="h5 fw-bold">AI-Enhanced Workflow</h3>
+                        <p class="text-muted mb-0">Secure, locally running AI tools for efficiency and accuracy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-3">
+                            <span class="display-6">✍️</span>
+                        </div>
+                        <h3 class="h5 fw-bold">Plain English Approach</h3>
+                        <p class="text-muted mb-0">Writing that is concise, engaging, and easy to understand.</p>
                     </div>
                 </div>
             </div>
@@ -48,11 +71,85 @@
     </div>
 </section>
 
+<!-- Services Overview Section -->
 <section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <span class="text-primary me-3 fs-4">✓</span>
+                    <div>
+                        <h3 class="h5 fw-bold">Investment Literature</h3>
+                        <p class="text-muted">Prospectuses, shareholder letters, annual reports.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <span class="text-primary me-3 fs-4">✓</span>
+                    <div>
+                        <h3 class="h5 fw-bold">Technical Documentation</h3>
+                        <p class="text-muted">Clear and structured manuals, guides, and whitepapers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <span class="text-primary me-3 fs-4">✓</span>
+                    <div>
+                        <h3 class="h5 fw-bold">Financial Copywriting</h3>
+                        <p class="text-muted">Blog posts, marketing content, and educational materials.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                    <span class="text-primary me-3 fs-4">✓</span>
+                    <div>
+                        <h3 class="h5 fw-bold">Editing &amp; Proofreading</h3>
+                        <p class="text-muted">Refining existing content for clarity and impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a asp-page="/Services" class="btn btn-primary btn-lg">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Selling Points -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center p-3">
+                    <h3 class="h5 fw-bold text-primary">Tailored Solutions</h3>
+                    <p class="text-muted">We customise every document to match your industry and audience, ensuring clarity and relevance.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-3">
+                    <h3 class="h5 fw-bold text-primary">Reliability &amp; Precision</h3>
+                    <p class="text-muted">Our extensive experience in financial and technical writing guarantees accuracy, consistency, and compliance with industry standards.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-3">
+                    <h3 class="h5 fw-bold text-primary">AI-Powered Efficiency</h3>
+                    <p class="text-muted">We leverage locally hosted AI tools to enhance productivity while maintaining strict confidentiality and security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-primary text-white py-5">
     <div class="container text-center">
-        <h2 class="mb-4">Ready to Improve Your Documentation?</h2>
-        <p class="lead mb-4">Let's discuss how professional technical writing can help your business.</p>
-        <a asp-page="/Services" class="btn btn-primary btn-lg me-2">View Services</a>
-        <a asp-page="/Portfolio" class="btn btn-outline-primary btn-lg">See My Work</a>
+        <h2 class="mb-4">Ready to Get Started?</h2>
+        <p class="lead mb-4">Looking for a technical writer who delivers precision, reliability, and quality?</p>
+        <a asp-page="/Contact" class="btn btn-light btn-lg">Contact Us to Discuss Your Project</a>
     </div>
 </section>

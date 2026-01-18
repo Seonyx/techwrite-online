@@ -4,33 +4,93 @@
     ViewData["Title"] = "About";
 }
 
+<!-- Hero Section -->
+<section class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row align-items-center py-4">
+            <div class="col-lg-3 text-center mb-4 mb-lg-0">
+                <img src="~/images/logo.png" alt="TechWrite Emblem" class="img-fluid" style="max-width: 180px; border-radius: 50%;">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-5 fw-bold mb-3">About Stephen Gould</h1>
+                <p class="lead mb-0">A dedicated financial and technical writer with a passion for precision, clarity, and innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
 <section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1 class="mb-4">About TechWrite.Online</h1>
+            <div class="col-lg-10 mx-auto">
+                <p class="lead">Hello, I'm Stephen Gould, a dedicated financial and technical writer with a passion for precision, clarity, and innovation.</p>
 
-                <p class="lead">Professional technical writing services focused on clarity, accuracy, and user success.</p>
+                <p>My journey began with the British government in the Marketing and Information division of the Department for National Savings (now NS&I), where I was attached to the press office. I wrote and collated stories for the monthly journal "Keypoints," which was circulated to 20,000 sub post offices across the UK.</p>
 
-                <h2 class="h4 mt-5 mb-3">Background</h2>
-                <p>With years of experience in technical writing and documentation, I help organizations communicate complex technical information clearly and effectively.</p>
-
-                <h2 class="h4 mt-5 mb-3">Expertise</h2>
-                <ul>
-                    <li>Software documentation and user guides</li>
-                    <li>API documentation</li>
-                    <li>Process and procedure documentation</li>
-                    <li>Technical editing and content review</li>
-                    <li>Information architecture and content strategy</li>
-                </ul>
-
-                <h2 class="h4 mt-5 mb-3">Approach</h2>
-                <p>I believe that good documentation is essential to product success. My approach focuses on understanding both the technical details and the end user's needs to create documentation that truly helps people accomplish their goals.</p>
-
-                <div class="mt-5">
-                    <a asp-page="/Contact" class="btn btn-primary">Get in Touch</a>
-                </div>
+                <p>My training was based on the guidelines in Ernest Gowers' book <em>"The Complete Plain Words,"</em> and plain English has been a mainstay of my writing ever since. Over the years, I've honed my craft to transform complex information into clear, engaging content.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Background Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="h3 fw-bold mb-4">A Background Built on Detail and Innovation</h2>
+
+                <p>Following a promotion, I moved into the technical department and became a programmer, focusing on migrating large mainframe applications to desktop computers. Many of these projects were financial in nature, such as the 'Bank of England Daybook'. This role demanded not only programming accuracy but also extensive documentation, through which I gained invaluable experience. I came to learn that every detail matters.</p>
+
+                <p>With the rise of the Internet, I transitioned to the private sector and founded a company that developed data-driven web applications for numerous London-based businesses, many in the financial sector. As the technical director of a growing web company, I engaged in both domestic writing and contributed to trade publications such as <em>Computer Weekly</em> and various Internet-specific outlets.</p>
+
+                <p>I pride myself on delivering work that not only informs but also inspires confidence. My approach is rooted in a commitment to quality—balancing rigorous accuracy with creative insight to ensure every piece of content meets the highest standards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="h3 fw-bold mb-4">Bridging the Gap Between Technology and Communication</h2>
+
+                <p>In today's digital age, effective communication is inseparable from advanced technology. The digital landscape is evolving rapidly, with many of the intricate details of coding increasingly handled by artificial intelligence. Yet while machine learning can generate impressive first drafts, the nuanced art of communication remains firmly in the human domain.</p>
+
+                <blockquote class="blockquote border-start border-primary border-4 ps-4 my-4">
+                    <p class="mb-0 fst-italic">NVIDIA CEO Jensen Huang recently noted that although he uses AI to produce initial drafts, he personally refines them—ensuring that the final output carries the subtlety and clarity only human insight can provide.</p>
+                </blockquote>
+
+                <p>By leveraging modern digital tools, I streamline the process of capturing and conveying information. This integration enables me to develop a rapid content creation method that renders even the most complex subjects accessible and engaging, blending technological efficiency with a distinctly human touch.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Looking Forward Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="h3 fw-bold mb-4">Looking Forward</h2>
+
+                <p>I'm constantly evolving, always seeking new ways to refine my skills and embrace the latest innovations. This website is a reflection of my journey—showcasing completed projects and insights on the latest trends in financial and technical writing.</p>
+
+                <p>I invite you to explore my <a asp-page="/Portfolio" class="text-decoration-none">portfolio</a> and discover how my expertise can benefit your organisation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-primary text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Let's Work Together</h2>
+        <p class="lead mb-4">Feel free to contact me to discuss how we can work together.</p>
+        <a asp-page="/Contact" class="btn btn-light btn-lg me-2">Get in Touch</a>
+        <a asp-page="/Portfolio" class="btn btn-outline-light btn-lg">View Portfolio</a>
     </div>
 </section>

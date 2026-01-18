@@ -12,11 +12,64 @@
 
                 <p class="lead mb-5">Interested in working together? I'd love to hear about your project.</p>
 
+                @if (Model.ShowSuccessMessage)
+                {
+                    <div class="alert alert-success" role="alert">
+                        <strong>Thank you!</strong> Your message has been sent successfully. I'll get back to you within one business day.
+                    </div>
+                }
+
+                @if (Model.ShowErrorMessage)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error:</strong> @Model.ErrorMessage
+                    </div>
+                }
+
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="h5 mb-4">Contact Information</h2>
+                        <h2 class="h5 mb-4">Send a Message</h2>
 
-                        <p><strong>Email:</strong> <a href="mailto:contact@techwrite.online">contact@techwrite.online</a></p>
+                        <form method="post" id="contactForm">
+                            <input type="hidden" asp-for="FormLoadTime" />
+
+                            <div class="mb-3">
+                                <label asp-for="Input.Name" class="form-label"></label>
+                                <input asp-for="Input.Name" class="form-control" placeholder="Your name" />
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Input.Email" class="form-label"></label>
+                                <input asp-for="Input.Email" class="form-control" type="email" placeholder="your.email@example.com" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Input.Subject" class="form-label"></label>
+                                <input asp-for="Input.Subject" class="form-control" placeholder="What is your inquiry about?" />
+                                <span asp-validation-for="Input.Subject" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Input.Message" class="form-label"></label>
+                                <textarea asp-for="Input.Message" class="form-control" rows="6" placeholder="Please include details about your project, timeline, and any relevant background information."></textarea>
+                                <span asp-validation-for="Input.Message" class="text-danger"></span>
+                            </div>
+
+                            <!-- Honeypot field - hidden with CSS positioning -->
+                            <div class="position-absolute" style="left: -9999px; top: -9999px;" aria-hidden="true">
+                                <label asp-for="Website" class="form-label">Website</label>
+                                <input asp-for="Website" class="form-control" tabindex="-1" autocomplete="off" />
+                            </div>
+
+                            <!-- Cloudflare Turnstile widget -->
+                            <div class="mb-3">
+                                <div class="cf-turnstile" data-sitekey="@Model.TurnstileSiteKey" data-theme="light"></div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </form>
 
                         <hr class="my-4">
 
@@ -35,3 +88,8 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <partial name="_ValidationScriptsPartial" />
+}

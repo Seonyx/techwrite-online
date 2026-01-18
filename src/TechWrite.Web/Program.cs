@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TechWrite.Web.Data;
+using TechWrite.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,14 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddRazorPages();
+
+// Configure contact form services
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
+builder.Services.Configure<TurnstileSettings>(builder.Configuration.GetSection("Turnstile"));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddHttpClient<ITurnstileService, TurnstileService>();
+builder.Services.AddSingleton<IRateLimitService, RateLimitService>();
 
 var app = builder.Build();
 

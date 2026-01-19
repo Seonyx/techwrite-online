@@ -1,8 +1,125 @@
-﻿@page
-@model PrivacyModel
+@page
+@model TechWrite.Web.Pages.PrivacyModel
 @{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <h1 class="mb-4">Privacy Policy</h1>
+            
+            <p class="lead mb-4">
+                This privacy policy sets out how TechWrite.Online uses and protects any information that you provide when you use this website. 
+                TechWrite.Online is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which 
+                you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
+            </p>
+            
+            <p class="mb-4">
+                TechWrite.Online may change this policy from time to time by updating this page. You should check this page periodically to ensure 
+                that you are happy with any changes. This policy is effective from January 2025.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">What We Collect</h2>
+            <p>We may collect the following information:</p>
+            <ul class="mb-4">
+                <li>Name and job title</li>
+                <li>Contact information including email address</li>
+                <li>Demographic information such as postcode, preferences and interests</li>
+                <li>Other information relevant to customer surveys and/or offers</li>
+            </ul>
+
+            <h2 class="h3 mt-5 mb-3">What We Do With the Information We Gather</h2>
+            <p>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:</p>
+            <ul class="mb-4">
+                <li>Internal record keeping</li>
+                <li>We may use the information to improve our products and services</li>
+                <li>We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided</li>
+                <li>From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone or mail</li>
+                <li>We may use the information to customise the website according to your interests</li>
+            </ul>
+
+            <h2 class="h3 mt-5 mb-3">Security</h2>
+            <p class="mb-4">
+                We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place 
+                suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">How We Use Cookies</h2>
+            <p class="mb-3">
+                A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie 
+                helps analyse web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. 
+                The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.
+            </p>
+            <p class="mb-3">
+                We use traffic log cookies to identify which pages are being used. This helps us analyse data about webpage traffic and improve our website 
+                in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.
+            </p>
+            <p class="mb-4">
+                Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. 
+                A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.
+            </p>
+            <p class="mb-4">
+                You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting 
+                to decline cookies if you prefer. This may prevent you from taking full advantage of the website.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">Links to Other Websites</h2>
+            <p class="mb-4">
+                Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that 
+                we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which 
+                you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the 
+                privacy statement applicable to the website in question.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">Controlling Your Personal Information</h2>
+            <p>You may choose to restrict the collection or use of your personal information in the following ways:</p>
+            <ol class="mb-4">
+                <li class="mb-2">Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes</li>
+                <li class="mb-2">If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by <a asp-page="/Contact">contacting us</a></li>
+            </ol>
+            
+            <p class="mb-3">
+                We will not sell, distribute or lease your personal information to third parties unless we have your permission or are required by law to do so. 
+                We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us 
+                that you wish this to happen.
+            </p>
+            
+            <p class="mb-4">
+                You may request details of personal information which we hold about you under the UK Data Protection Act 2018 and GDPR. If you would like a copy 
+                of the information held on you, please <a asp-page="/Contact">contact us</a>.
+            </p>
+            
+            <p class="mb-4">
+                If you believe that any information we are holding on you is incorrect or incomplete, please <a asp-page="/Contact">contact us</a> as soon as possible. 
+                We will promptly correct any information found to be incorrect.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">Your Rights Under GDPR</h2>
+            <p>Under GDPR and UK data protection law, you have the right to:</p>
+            <ul class="mb-4">
+                <li>Access your personal data</li>
+                <li>Rectify inaccurate personal data</li>
+                <li>Erase your personal data</li>
+                <li>Restrict processing of your personal data</li>
+                <li>Object to processing of your personal data</li>
+                <li>Data portability</li>
+            </ul>
+
+            <h2 class="h3 mt-5 mb-3">Data Retention</h2>
+            <p class="mb-4">
+                We retain personal information only as long as necessary for the purposes outlined in this policy or as required by law. Information submitted 
+                through our contact form is stored securely in our database and used solely to respond to your enquiry.
+            </p>
+
+            <h2 class="h3 mt-5 mb-3">Contact Us</h2>
+            <p class="mb-4">
+                If you have any questions about this privacy policy or how we handle your personal data, please <a asp-page="/Contact">contact us</a>.
+            </p>
+
+            <p class="text-muted mt-5">
+                <small>Last updated: January 2025</small>
+            </p>
+        </div>
+    </div>
+</div>

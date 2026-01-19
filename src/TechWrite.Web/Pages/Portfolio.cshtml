@@ -4,46 +4,229 @@
     ViewData["Title"] = "Portfolio";
 }
 
+<!-- Hero Section -->
+<section class="bg-dark text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-5 fw-bold mb-3">Portfolio</h1>
+        <p class="lead mb-0">A selection of published work spanning 25+ years of technical and editorial writing.</p>
+    </div>
+</section>
+
+<!-- Portfolio Grid -->
 <section class="py-5">
     <div class="container">
-        <h1 class="text-center mb-5">Portfolio</h1>
-
-        <p class="lead text-center mb-5">Selected examples of technical writing projects and documentation work.</p>
-
         <div class="row g-4">
+            <!-- The Internet Journal -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 portfolio-card" role="button" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <div class="position-relative overflow-hidden">
+                        <img src="~/images/portfolio/IJ1.png" class="card-img-top" alt="The Internet Journal - April 1999" style="height: 280px; object-fit: cover; object-position: top;">
+                        <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <span class="btn btn-light">View Details</span>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h2 class="h5 card-title">Software User Guide</h2>
-                        <p class="card-text text-muted">Comprehensive user documentation for enterprise software application.</p>
-                        <span class="badge bg-secondary">User Documentation</span>
+                        <h2 class="h5 card-title fw-bold">The Internet Journal</h2>
+                        <p class="text-muted mb-2">April 1999 &bull; Editor &amp; Contributor</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Technical Editing</span>
+                            <span class="badge bg-secondary">Trade Publication</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- The Psychopath Next Door -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 portfolio-card" role="button" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                    <div class="position-relative overflow-hidden">
+                        <img src="~/images/portfolio/PN1.png" class="card-img-top" alt="The Psychopath Next Door" style="height: 280px; object-fit: cover; object-position: top;">
+                        <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <span class="btn btn-light">View Details</span>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h2 class="h5 card-title">REST API Reference</h2>
-                        <p class="card-text text-muted">Developer-focused API documentation with code examples.</p>
-                        <span class="badge bg-secondary">API Documentation</span>
+                        <h2 class="h5 card-title fw-bold">The Psychopath Next Door</h2>
+                        <p class="text-muted mb-2">Magazine Article</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Research Synthesis</span>
+                            <span class="badge bg-secondary">Public Education</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Tribes -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
+                <div class="card h-100 portfolio-card" role="button" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                    <div class="position-relative overflow-hidden">
+                        <img src="~/images/portfolio/Tribes1.png" class="card-img-top" alt="Tribes" style="height: 280px; object-fit: cover; object-position: top;">
+                        <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <span class="btn btn-light">View Details</span>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h2 class="h5 card-title">Operations Manual</h2>
-                        <p class="card-text text-muted">Standard operating procedures for IT operations team.</p>
-                        <span class="badge bg-secondary">Process Documentation</span>
+                        <h2 class="h5 card-title fw-bold">Tribes</h2>
+                        <p class="text-muted mb-2">Magazine Article &bull; Cehegín, Spain</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Cultural Analysis</span>
+                            <span class="badge bg-secondary">Narrative Non-Fiction</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="alert alert-info mt-5" role="alert">
-            <strong>Note:</strong> Detailed case studies and writing samples are available upon request. Please <a asp-page="/Contact" class="alert-link">contact me</a> to discuss your specific documentation needs.
         </div>
     </div>
 </section>
+
+<!-- Call to Action -->
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Interested in Working Together?</h2>
+        <p class="lead mb-4">See how this experience can benefit your project.</p>
+        <a asp-page="/Contact" class="btn btn-primary btn-lg">Get in Touch</a>
+    </div>
+</section>
+
+<!-- Modal 1: The Internet Journal -->
+<div class="modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h3 class="modal-title h5" id="portfolioModal1Label">The Internet Journal - Issue 3</h3>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <div id="carousel1" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/images/portfolio/IJ1.png" class="d-block w-100" alt="The Internet Journal - Cover">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/images/portfolio/IJ2.png" class="d-block w-100" alt="The Internet Journal - Article">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            <div class="carousel-indicators position-relative mt-2">
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="Page 1"></button>
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" class="bg-dark" aria-label="Page 2"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="text-muted mb-2"><strong>Date:</strong> April 1999</p>
+                        <p class="text-muted mb-3"><strong>Role:</strong> Editor and Contributing Writer</p>
+                        <p>Served as Editor for The Internet Journal, a trade publication covering the emerging Internet industry. Wrote technical articles including 'The D-Channel' piece exploring innovative uses of ISDN technology for always-on Internet connectivity—prescient analysis of what would become broadband infrastructure.</p>
+                        <hr>
+                        <p class="fw-bold mb-2">Skills Demonstrated:</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Technical Editing</span>
+                            <span class="badge bg-primary">Telecommunications</span>
+                            <span class="badge bg-primary">Trend Analysis</span>
+                            <span class="badge bg-primary">Trade Publication Standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: The Psychopath Next Door -->
+<div class="modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h3 class="modal-title h5" id="portfolioModal2Label">The Psychopath Next Door</h3>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <img src="~/images/portfolio/PN1.png" class="d-block w-100" alt="The Psychopath Next Door">
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="text-muted mb-2"><strong>Type:</strong> Magazine Article</p>
+                        <p class="text-muted mb-3"><strong>Role:</strong> Writer</p>
+                        <p>Educational article breaking down complex psychological concepts for general audiences. Explains psychopathy characteristics, warning signs, and practical advice for readers—demonstrating ability to make specialist knowledge accessible without oversimplification.</p>
+                        <hr>
+                        <p class="fw-bold mb-2">Skills Demonstrated:</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Research Synthesis</span>
+                            <span class="badge bg-primary">Plain English Principles</span>
+                            <span class="badge bg-primary">Public Education</span>
+                            <span class="badge bg-primary">Sensitive Topic Handling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: Tribes -->
+<div class="modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h3 class="modal-title h5" id="portfolioModal3Label">Tribes</h3>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <img src="~/images/portfolio/Tribes1.png" class="d-block w-100" alt="Tribes">
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="text-muted mb-2"><strong>Type:</strong> Magazine Article</p>
+                        <p class="text-muted mb-3"><strong>Location:</strong> Written in Cehegín, Spain</p>
+                        <p>Social commentary piece exploring tribal psychology and community dynamics. Applies anthropological concepts to modern British expatriate communities, showing depth of cultural observation and engaging narrative style.</p>
+                        <hr>
+                        <p class="fw-bold mb-2">Skills Demonstrated:</p>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge bg-primary">Cultural Analysis</span>
+                            <span class="badge bg-primary">Narrative Non-Fiction</span>
+                            <span class="badge bg-primary">Observational Writing</span>
+                            <span class="badge bg-primary">International Perspective</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<style>
+    .portfolio-card {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .portfolio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    .portfolio-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .portfolio-card:hover .portfolio-overlay {
+        opacity: 1;
+    }
+    .carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+</style>
+}

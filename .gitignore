@@ -421,3 +421,7 @@ FodyWeavers.xsd
 *.db
 *.db-shm
 *.db-wal
+
+# Project planning and implementation notes
+TECHWRITE_PROJECT_BRIEF.md
+contact-form-implementation.md

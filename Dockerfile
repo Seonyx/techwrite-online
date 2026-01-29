@@ -21,6 +21,9 @@ RUN adduser --disabled-password --gecos '' appuser
 # Copy published app
 COPY --from=build /app/publish .
 
+# Create SQLite data directory and set ownership
+RUN mkdir -p /app/data && chown appuser:appuser /app/data
+
 # Set ownership and switch to non-root user
 RUN chown -R appuser:appuser /app
 USER appuser

@@ -1,0 +1,39 @@
+name: Deploy to mywindowshosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish
+        run: dotnet publish src/TechWrite.Web -c Release -o publish
+
+      - name: Deploy over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: win8119.site4now.net
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: publish/
+          server-dir: /techwrite/
+          # Never let a redeploy wipe DataProtection keys or server-side
+          # production secrets — neither is ever present in local-dir,
+          # so these patterns just protect the matching remote paths
+          # from the action's sync-delete step.
+          exclude: |
+            **/App_Data/**
+            **/appsettings.Production.json

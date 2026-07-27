@@ -150,12 +150,6 @@ public class ContactModel : PageModel
 
     private string GetClientIpAddress()
     {
-        var forwardedFor = HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
-        if (!string.IsNullOrEmpty(forwardedFor))
-        {
-            return forwardedFor.Split(',')[0].Trim();
-        }
-
         return HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
     }
 

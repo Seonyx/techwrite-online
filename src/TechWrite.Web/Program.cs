@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TechWrite.Web.Data;
@@ -29,6 +31,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 
 builder.Services.AddRazorPages();
 
+// Persist DataProtection keys to disk so cookies/antiforgery tokens
+// survive IIS app-pool recycles
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(builder.Environment.ContentRootPath, "App_Data", "dp-keys")))
+    .SetApplicationName("TechWrite.Web");
+
 // Configure contact form services
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
 builder.Services.Configure<TurnstileSettings>(builder.Configuration.GetSection("Turnstile"));
@@ -40,6 +48,15 @@ builder.Services.AddSingleton<IRateLimitService, RateLimitService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
+
+// Trust X-Forwarded-For/X-Forwarded-Proto from IIS (ANCM out-of-process
+// runs Kestrel behind IIS as a reverse proxy on the same machine, so the
+// default loopback-only KnownProxies is correct here)
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
@@ -59,12 +76,20 @@ app.MapRazorPages();
 // Health check endpoint for Docker/Render
 app.MapGet("/health", () => Results.Ok("healthy"));
 
-// Ensure SQLite data directory exists and apply pending migrations on startup
-Directory.CreateDirectory("data");
+// Apply pending migrations on startup
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
+    try
+    {
+        db.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        scope.ServiceProvider.GetRequiredService<ILogger<Program>>()
+            .LogCritical(ex, "Database migration failed on startup");
+        throw;
+    }
 }
 
 app.Run();

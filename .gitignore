@@ -422,6 +422,9 @@ FodyWeavers.xsd
 *.db-shm
 *.db-wal
 
+# DataProtection keys (persisted per-environment, never checked in)
+App_Data/
+
 # Project planning and implementation notes
 TECHWRITE_PROJECT_BRIEF.md
 contact-form-implementation.md

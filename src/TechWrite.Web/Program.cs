@@ -5,12 +5,12 @@ using TechWrite.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Entity Framework Core with SQLite
+// Configure Entity Framework Core with SQL Server
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=data/techwrite.db";
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 
 // Configure ASP.NET Core Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>

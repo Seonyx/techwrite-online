@@ -75,6 +75,25 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Maureen Avis -->
+            <div class="col-md-6 col-lg-4">
+                <aside class="mo-card">
+                    <p class="mo-card__eyebrow">Elsewhere</p>
+                    <h3 class="mo-card__name">
+                        <a href="https://moavis.nexus/">Maureen Avis</a>
+                    </h3>
+                    <p class="mo-card__role">Science fiction &middot; Seonyx Publishing</p>
+                    <p class="mo-card__body">
+                        Novels written with AI in the loop and a human holding the pen &mdash;
+                        deliberately, and in the open. Her debut,
+                        <cite>The Mayfly Mutiny</cite>, is out now, and she writes a weekly blog
+                        about how the books actually get made: the drafts, the constraints,
+                        the arguments with the machine.
+                    </p>
+                    <a class="mo-card__cta" href="https://moavis.nexus/">Read Maureen Avis at moavis.nexus</a>
+                </aside>
+            </div>
         </div>
     </div>
 </section>
@@ -227,6 +246,61 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
+    }
+
+    /* Maureen Avis link card */
+    .mo-card {
+        --mo-bg: #171a2e; --mo-ink: #e8e8f2; --mo-dim: #a3a6c0;
+        --mo-brass: #d8a657; --mo-rule: rgba(216,166,87,.28);
+        background: var(--mo-bg); color: var(--mo-ink);
+        border: 1px solid var(--mo-rule); border-top: 3px solid var(--mo-brass);
+        border-radius: 4px; padding: 1.4rem 1.4rem 1.5rem;
+        height: 100%; margin: 0; line-height: 1.55;
+        font-size: .95rem; box-sizing: border-box;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .mo-card * { box-sizing: border-box }
+    .mo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+    }
+    .mo-card a {
+        text-decoration: none !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        padding: 0; border: 0;
+    }
+    .mo-card a:focus-visible { outline: 2px solid var(--mo-brass); outline-offset: 3px }
+    .mo-card__eyebrow {
+        font-family: ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+        font-size: .66rem; letter-spacing: .18em; text-transform: uppercase;
+        color: var(--mo-brass); margin: 0 0 .7rem;
+    }
+    .mo-card__name { margin: 0 0 .15rem }
+    .mo-card__name a {
+        font-family: Georgia,"Iowan Old Style","Times New Roman",serif !important;
+        font-size: clamp(1.25rem,1.05rem + 1.1vw,1.5rem) !important;
+        font-weight: 400 !important; line-height: 1.2 !important;
+        letter-spacing: .01em; color: var(--mo-ink) !important;
+        display: inline-block; border-bottom: 1px solid var(--mo-rule) !important;
+    }
+    .mo-card__name a:hover,
+    .mo-card__name a:focus-visible { border-bottom-color: var(--mo-brass) !important }
+    .mo-card__role { color: var(--mo-dim); font-size: .82rem; margin: 0 0 .9rem }
+    .mo-card__body { margin: 0 0 1.1rem; color: var(--mo-ink) }
+    .mo-card__body cite { font-style: italic }
+    .mo-card__cta {
+        display: inline-block; padding: .55rem 1rem !important;
+        background: var(--mo-brass) !important; color: #171a2e !important;
+        font-family: inherit !important; font-size: .88rem !important;
+        font-weight: 600 !important; line-height: 1.3 !important;
+        border-radius: 3px;
+    }
+    .mo-card__cta:hover,
+    .mo-card__cta:focus-visible { background: #e8bd72 !important; color: #171a2e !important }
+    @@media (max-width: 420px) {
+        .mo-card { padding: 1.1rem }
+        .mo-card__cta { display: block; text-align: center }
     }
 </style>
 }
